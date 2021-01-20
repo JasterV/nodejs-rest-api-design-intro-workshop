@@ -39,6 +39,6 @@ const BookSchema = new mongoose.Schema({
   },
 });
 
-const BookModel = new mongoose.model("book", BookSchema);
+const BookModel = mongoose.model("book", BookSchema);
 
 module.exports = BookModel;

@@ -11,6 +11,6 @@ app.use(morgan("dev"));
 app.use(helmet());
 app.use(json());
 
-app.use(bookRouter);
+app.use("/books", bookRouter);
 
 module.exports = app;
