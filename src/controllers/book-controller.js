@@ -1,5 +1,4 @@
 const db = require("../models");
-const { logger } = require("../config/config");
 
 /**
  * 1. Create the book CRUD controllers
@@ -37,7 +36,8 @@ const { logger } = require("../config/config");
  */
 async function createBook(req, res, next) {
   try {
-    const book = await db.Book.create(req.body);
+    const { ...bookData } = req.body;
+    const book = await db.Book.create(bookData);
     res.status(201).send({
       data: book._id
     });
